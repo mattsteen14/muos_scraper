@@ -5,7 +5,15 @@ from urllib.parse import quote
 from PIL import Image
 from io import BytesIO
 
-GITHUB_COMMIT = "00498a7f6db86bc45146b835ba1aeed58a1a1fe5"
+def get_latest_commit_hash(repo_name):
+    api_url = f"https://api.github.com/repos/libretro-thumbnails/{repo_name}/commits"
+    try:
+        response = requests.get(api_url, headers={"Accept": "application/vnd.github+json"})
+        response.raise_for_status()
+        return response.json()[0]["sha"]
+    except Exception as e:
+        print(f"✖ Error getting latest commit hash for {repo_name}: {e}")
+        return None
 
 def list_rom_files(folder):
     extensions = ('.zip', '.7z', '.nes', '.sfc', '.smc', '.gba', '.gbc', '.gb', '.n64', '.z64', '.v64', '.bin', '.iso', '.chd', '.rom', '.mgw', '.nds', '.vb', '.p8', '.32x', '.sms', '.md', '.ngc', '.wsc', '.ws', '.dsk', '.tap', '.z80')
@@ -27,10 +35,10 @@ def resize_and_save_image(response_content, output_path, width=300):
     except Exception as e:
         print(f"✖ Error resizing image: {e}")
 
-def download_libretro_thumbnail(libretro_folder, art_type, rom_name, output_path):
+def download_libretro_thumbnail(libretro_folder, commit_hash, art_type, rom_name, output_path):
     filename = f"{rom_name}.png"
     encoded_filename = quote(filename, safe="")  # full encoding
-    url = f"https://raw.githubusercontent.com/libretro-thumbnails/{libretro_folder}/{GITHUB_COMMIT}/{art_type}/{encoded_filename}"
+    url = f"https://raw.githubusercontent.com/libretro-thumbnails/{libretro_folder}/{commit_hash}/{art_type}/{encoded_filename}"
 
     try:
         response = requests.get(url)
@@ -55,6 +63,12 @@ if __name__ == "__main__":
     parser.add_argument('--libretro-folder', required=True, help='libretro-thumbnails GitHub folder (e.g. Amstrad_-_CPC)')
     parser.add_argument('--output-folder', required=True, help='Full MUOS output path including system name (e.g. .../catalogue/Amstrad CPC)')
     args = parser.parse_args()
+    
+    print(f"Fetching latest commit hash for {args.libretro_folder}...")
+    latest_commit = get_latest_commit_hash(args.libretro_folder)
+    if not latest_commit:
+        print("✖ Aborting: Failed to fetch latest commit hash")
+        exit(1)
 
     roms = list_rom_files(args.roms_folder)
     print(f"\n🎮 Found {len(roms)} ROM(s)\n")
@@ -71,5 +85,5 @@ if __name__ == "__main__":
         box_path = os.path.join(box_dir, f"{rom_name}.png")
         preview_path = os.path.join(preview_dir, f"{rom_name}.png")
 
-        download_libretro_thumbnail(args.libretro_folder, "Named_Boxarts", rom_name, box_path)
-        download_libretro_thumbnail(args.libretro_folder, "Named_Snaps", rom_name, preview_path)
+        download_libretro_thumbnail(args.libretro_folder, latest_commit, "Named_Boxarts", rom_name, box_path)
+        download_libretro_thumbnail(args.libretro_folder, latest_commit, "Named_Snaps", rom_name, preview_path)
