@@ -1,61 +1,38 @@
-<a name="readme-top"></a>
+# 🎮 MUOS Scraper
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors](https://img.shields.io/github/contributors/mattsteen14/muos_scraper.svg?style=for-the-badge)](https://github.com/mattsteen14/muos_scraper/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/mattsteen14/muos_scraper.svg?style=for-the-badge)](https://github.com/mattsteen14/muos_scraper/network/members)
+[![Stargazers](https://img.shields.io/github/stars/mattsteen14/muos_scraper.svg?style=for-the-badge)](https://github.com/mattsteen14/muos_scraper/stargazers)
+[![Issues](https://img.shields.io/github/issues/mattsteen14/muos_scraper.svg?style=for-the-badge)](https://github.com/mattsteen14/muos_scraper/issues)
+[![MIT License](https://img.shields.io/github/license/mattsteen14/muos_scraper.svg?style=for-the-badge)](https://github.com/mattsteen14/muos_scraper/blob/main/LICENSE)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555)](https://www.linkedin.com/in/mattsteen14)
 
-<h1 align="center">MUOS Scraper - libretro-thumbnails Downloader</h1>
+---
 
-  <p align="center">
-    <a href="https://github.com/mattsteen14/muos_scraper"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-     <a href="https://github.com/mattsteen14/muos_scraper">View Demo</a>
-    ·
-    <a href="https://github.com/mattsteen14/muos_scraper/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/mattsteen14/muos_scraper/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
-</div>
+[**Explore the docs »**](https://github.com/mattsteen14/muos_scraper)
+[View Demo](https://github.com/mattsteen14/muos_scraper) ·
+[Report Bug](https://github.com/mattsteen14/muos_scraper/issues/new?labels=bug&template=bug-report---.md) ·
+[Request Feature](https://github.com/mattsteen14/muos_scraper/issues/new?labels=enhancement&template=feature-request---.md)
 
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+  <summary><strong>📚 Table of Contents</strong></summary>
+
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Acknowledgments](#acknowledgments)
+
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+---
+
+## 🚀 About The Project
 
 This is a simple Python CLI tool to automatically download box art and preview images for your video game ROMs from the [libretro-thumbnails GitHub repository](https://github.com/libretro-thumbnails/libretro-thumbnails).
 
@@ -63,165 +40,158 @@ The tool matches your ROM filenames exactly — including metadata like years an
 
 This tool is intended as an alternative to [ScreenScraper](https://www.screenscraper.fr)/[Skraper](https://www.skraper.net) & [Scrappy](https://github.com/gabrielfvale/scrappy/releases) for Anbernic RG28XX devices that are not Wi-Fi enabled, and for users who want to use Skraper but can’t install it due to Mac compatibility issues.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### 📦 Features
 
-### Built With
+- 🧠 Matches ROM filenames exactly — including metadata like year and publisher
+- 🔄 Automatically resizes box art to 300px wide for MUOS
+- 📁 Outputs to MUOS `/info/catalogue/{system}/box` and `/preview` subfolders
+- ⚡ Uses dynamic commit fetching from GitHub (no hardcoded versions)
+- ✅ Great for RG28XX and other MUOS-based devices
 
-- [Python 3](https://www.python.org/)
-- [Requests](https://requests.readthedocs.io/en/latest/)
-- [Pillow (PIL)](https://python-pillow.org/)
+⬆️ [Back to top](#retroarch-scraper)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+---
 
-<!-- GETTING STARTED -->
-## Getting Started
+### 🛠 Built With
 
-These are instructions for setting up the project locally. To get a local copy up and running, follow these simple steps.
+[![Python](https://img.shields.io/badge/Python-3.6%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Requests](https://img.shields.io/badge/Requests-%3E=2.25.1-green)](https://requests.readthedocs.io/en/latest/)
+[![Pillow](https://img.shields.io/badge/Pillow-%3E=8.0.0-yellowgreen)](https://python-pillow.org/)
 
-### Prerequisites
+⬆️ [Back to top](#retroarch-scraper)
 
-- Internet connection to download images from GitHub
-- Your ROMs organized in a folder (with filenames matching libretro-thumbnails naming conventions)
-- Knowledge of your system's MUOS system name and corresponding libretro-thumbnails folder name
+---
 
-Ensure you have the following software installed before proceeding:
+## 🧰 Getting Started
 
-- **Python 3.6 or higher**: Check with:
+These instructions will help you set up the project locally.
 
-  ```sh
-  python3 --version
-  ```
+### ✅ Prerequisites
 
-- **The Pillow image library**
+- An internet connection (to download artwork from GitHub)
+- ROMs organized in folders (with filenames that match libretro-thumbnails)
+- Knowledge of your system’s MUOS name and libretro-thumbnails folder name
 
-    Install Pillow using pip:
+Make sure Python and Pillow are installed:
 
-  ```sh
-  pip install pillow
-  ```
+```bash
+python3 --version
+pip install pillow
+```
 
-### Installation
+---
+
+### 🖥 Installation
 
 1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/mattsteen14/muos_scraper.git
-   ```
+```bash
+git clone https://github.com/mattsteen14/muos_scraper.git
+```
 
-2. In the terminal, navigate into the project directory:
+2. Navigate into the project folder:
 
-   ```sh
-   cd muos_scraper
-   ```
+```bash
+cd muos_scraper
+```
 
-3. Install the required Python packages:
+3. Install dependencies:
 
-   ```sh
-   pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
 4. Run the script with your ROMs folder, libretro folder name, and output folder:
 
-   ```sh
-   python muos_scraper.py --roms-folder '/path/ROMS/N64'
-                       --libretro-folder Nintendo_-_Nintendo_64
-                       --output-folder '/MUOS/info/catalogue/Nintendo\ N64'
-   ```
-    -	--roms-folder — Required. Path to the roms folder you'd like images for. In quotes.
-    -	--libretro-folder — Required. How the system is called in the github.com/libretro-thumbnails/ URL. See above example. For this you will have to find the system on the [libretro-thumbnails GitHub repository](https://github.com/libretro-thumbnails/libretro-thumbnails). I will work on how this can be set dynamically. Feel free to send a pull request if you know how it can be done.
-    -	--output-folder — Required. Path to the /MUOS/info/catalogue/{system name} folder with the box & preview sub folders you would like to populate. In quotes.
+```sh
+python muos_scraper.py --roms-folder '/path/ROMS/N64'
+--libretro-folder Nintendo_-_Nintendo_64
+--output-folder '/MUOS/info/catalogue/Nintendo\ N64'
+```
 
-    *Hint:* 
-    
-    *Instead of typing the full paths, just drag & drop the folders into the terminal.*
+- --roms-folder — Required. Path to the roms folder you'd like images for. In quotes.
+- --libretro-folder — Required. How the system is called in the github.com/libretro-thumbnails/ URL. See above example. For this you will have to find the system on the [libretro-thumbnails GitHub repository](https://github.com/libretro-thumbnails/libretro-thumbnails). I will work on how this can be set dynamically. Feel free to send a pull request if you know how it can be done.
+- --output-folder — Required. Path to the /MUOS/info/catalogue/{system name} folder with the box & preview sub folders you would like to populate. In quotes.
+- *Hint: Instead of typing the full paths, just drag & drop the folders into the terminal.*
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+⬆️ [Back to top](#retroarch-scraper)
 
-<!-- ROADMAP -->
-## Roadmap
+---
+
+## 📅 Roadmap
 
 - [x] Plan project.
 - [x] Write code.
 - [x] Test on roms folder.
 - [x] Version control. Set up on GitHub.
 - [x] Push to GitHub.
-- [ ] Testing and dubugging.
+- [ ] Testing and debugging.
 - [ ] Additional features.
 - [ ] Simplify inputs.
 - [ ] Create simple GUI interface.
 
-See the [open issues](https://github.com/mattsteen14/muos_scraper/issues) for a full list of proposed features (and known issues).
+👉 See [Issues](https://github.com/mattsteen14/muos_scraper/issues) for open features and bugs.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+⬆️ [Back to top](#retroarch-scraper)
 
-<!-- CONTRIBUTING -->
-## Contributing
+---
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+## 🤝 Contributing
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Contributions are what make open source amazing. If you'd like to help:
 
-1. Fork the Project.
+1. Fork the repository
 
-2. Create your Feature Branch:
+2. Create your branch:  
 
-   ```sh
-   git checkout -b feature/AmazingFeature
-   ```
+```bash
+git checkout -b feature/YourFeature
+```
 
-3. Commit your Changes:
+3. Commit your changes:  
 
-   ```sh
-   git commit -m "Add some AmazingFeature"
-   ```
+```bash
+git commit -m "Add some feature"
+```
 
-4. Push to the Branch:
+4. Push to GitHub:  
 
-   ```sh
-   git push origin feature/AmazingFeature
-   ```
+```bash
+git push origin feature/YourFeature
+```
 
-5. Open a Pull Request.
+5. Open a pull request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Or open an issue with the **enhancement** label.
 
-<!-- LICENSE -->
-## License
+⬆️ [Back to top](#retroarch-scraper)
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+---
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 📝 License
 
-<!-- CONTACT -->
-## Contact
+Distributed under the MIT License.  
+See [`LICENSE`](https://github.com/mattsteen14/muos_scraper/blob/main/LICENSE) for more information.
 
-Matt Steen-Brookes - [@mattsteen14](https://twitter.com/mattsteen14) - <mattsteen14@me.com>
+⬆️ [Back to top](#retroarch-scraper)
 
-Project Link: [https://github.com/mattsteen14/muos_scraper](https://github.com/mattsteen14/muos_scraper)
+---
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## 📬 Contact
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+Matt Steen-Brookes  
+📧 [mattsteen14@me.com](mailto:mattsteen14@me.com)  
+🐦 [@mattsteen14](https://twitter.com/mattsteen14)  
+🔗 [GitHub Repo](https://github.com/mattsteen14/muos_scraper)
 
-- [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy in the first place.
-- [Othneil Drew](https://github.com/othneildrew) for the README template.
+⬆️ [Back to top](#retroarch-scraper)
+
+---
+
+## 🙏 Acknowledgments
+
+- [Mo Ashqar](https://github.com/ashqar) for introducing me to Codecademy
+- [Othneil Drew](https://github.com/othneildrew) for the README template
 - [Choose an Open Source License](https://choosealicense.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/mattsteen14/muos_scraper.svg?style=for-the-badge
-[contributors-url]: https://github.com/mattsteen14/muos_scraper/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/mattsteen14/muos_scraper.svg?style=for-the-badge
-[forks-url]: https://github.com/mattsteen14/muos_scraper/network/members
-[stars-shield]: https://img.shields.io/github/stars/mattsteen14/muos_scraper.svg?style=for-the-badge
-[stars-url]: https://github.com/mattsteen14/muos_scraper/stargazers
-[issues-shield]: https://img.shields.io/github/issues/mattsteen14/muos_scraper.svg?style=for-the-badge
-[issues-url]: https://github.com/mattsteen14/muos_scraper/issues
-[license-shield]: https://img.shields.io/github/license/mattsteen14/muos_scraper.svg?style=for-the-badge
-[license-url]: https://github.com/mattsteen14/muos_scraper/blob/main/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/mattsteen14
+⬆️ [Back to top](#retroarch-scraper)
